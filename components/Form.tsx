@@ -77,6 +77,7 @@ const Form = () => {
                     options = [...e.options]
             })
             setFlowOptions(options)
+            setShow(false)
         }, [])
 
     const handleFlow = React.useCallback(

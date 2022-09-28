@@ -12,7 +12,8 @@ type Props = {
     clear: boolean
 }
 
-const SelectInput = React.memo((props: Props) => {
+export default function SelectInput(props: Props) {
+    const { options, clear } = props
     const [value, setLabel] = React.useState<string>('')
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -22,7 +23,7 @@ const SelectInput = React.memo((props: Props) => {
     React.useEffect(() => {
         setLabel('')
         props.onChange('')
-    }, [props.options, props.clear])
+    }, [options, clear])
 
     React.useEffect(() => {
         props.onChange(value)
@@ -53,6 +54,4 @@ const SelectInput = React.memo((props: Props) => {
             </Select>
         </FormControl >
     </Box>
-})
-
-export default SelectInput
+}

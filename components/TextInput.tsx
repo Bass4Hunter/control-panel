@@ -9,6 +9,7 @@ type Props = {
 }
 
 export default function TextInput(props: Props) {
+    const { clear } = props
     const [value, setValue] = React.useState<string>('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +21,7 @@ export default function TextInput(props: Props) {
 
     React.useEffect(() => {
         setValue('')
-    }, [props.clear])
+    }, [clear])
 
     return <Box
         component="form"
